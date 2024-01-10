@@ -2,8 +2,18 @@ import {ColumnsType} from "antd/es/table/interface";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Button, Table} from "antd";
+import styled from "styled-components";
 
-function Data () {
+
+export const DataWrapper = styled.div`
+    border: 2px solid greenyellow;
+    width: 400px;
+    background-color: white;
+    color: var(--headingColor);
+    font-size: var(--headingSize);
+`
+
+const Data = () => {
     const LIMIT_LIST_SCHOOL: number = 10;
 
     interface DataType {
@@ -41,13 +51,13 @@ function Data () {
 
     return (
         <>
-
-            <Table dataSource={dataSource} columns={columns} pagination={false}/>
-            <Button onClick={() => setPage(page - 1)} disabled={page < 2}>Previous</Button>
-            <Button onClick={() => setPage(page + 1)}>Next</Button>
             <hr/>
-            <br/>
-            <p>{page}</p>
+            <DataWrapper>
+                <Table dataSource={dataSource} columns={columns} pagination={false}/>
+                <Button onClick={() => setPage(page - 1)} disabled={page < 2}>Previous</Button>
+                <Button onClick={() => setPage(page + 1)}>Next</Button>
+                <p>{page}</p>
+            </DataWrapper>
         </>
     )
 }
