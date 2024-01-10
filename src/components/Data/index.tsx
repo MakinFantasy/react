@@ -1,8 +1,9 @@
-import {ColumnsType} from "antd/es/table/interface";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Button, Table} from "antd";
 import styled from "styled-components";
+import {DataType} from "./Datatype.tsx";
+import {columns} from "./columns.tsx";
 
 
 export const DataWrapper = styled.div`
@@ -16,24 +17,6 @@ export const DataWrapper = styled.div`
 const Data = () => {
     const LIMIT_LIST_SCHOOL: number = 10;
 
-    interface DataType {
-        key: number,
-        country: string,
-        name: string,
-    }
-
-    const columns: ColumnsType<DataType> = [
-        {
-            title: 'Country',
-            dataIndex: 'country',
-            key: 'country',
-        },
-        {
-            title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
-        },
-    ];
 
     const [page, setPage] = useState<number>(1);
     const [dataSource, setDataSource] = useState<DataType[]>();
@@ -42,8 +25,10 @@ const Data = () => {
         getUniversity(page, LIMIT_LIST_SCHOOL);
     }, [page, LIMIT_LIST_SCHOOL]);
 
+    const offset = LIMIT_LIST_SCHOOL * page - LIMIT_LIST_SCHOOL;
+
     const getUniversity = async (page: number, limit: number) => {
-        const response = await axios.get(`http://universities.hipolabs.com/search?offset=${ (limit * page - limit) }&limit=${limit}`);
+        const response = await axios.get(`http://universities.hipolabs.com/search?offset=${offset}&limit=${limit}`);
         console.log(response);
         setDataSource(response.data);
     }
