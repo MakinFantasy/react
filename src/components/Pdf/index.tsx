@@ -4,7 +4,7 @@ import { useFormData } from './hook.tsx'
 import {Form} from './styles.ts'
 
 
-const PdfForm = () => {
+const Pdf = () => {
     const { handleSubmit, generatePdfFile, register, errors, formData } =
         useFormData()
     return (
@@ -48,4 +48,4 @@ const PdfForm = () => {
     )
 }
 
-export default PdfForm
+export default Pdf

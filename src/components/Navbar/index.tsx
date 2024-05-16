@@ -3,7 +3,7 @@ import {
     GITHUB_ROUTE,
     GITLAB_ROUTE,
     YOUTUBE_ROUTE,
-    LEETCODE_ROUTE
+    LEETCODE_ROUTE, DYNAMIC_PAGINATION_ROUTE, HOME_ROUTE, DOWNLOAD_ROUTE
 } from "../MainRouter/configs.tsx";
 import styled from "styled-components";
 import {useState} from "react";
@@ -23,6 +23,8 @@ export const NavbarWrapper = styled.div<StyledProps>`
     max-width: 1000px;
     background: white;
     border: 1px solid black;
+    gap: 30px;
+    margin: 0 auto;
 `
 
 export const LinkStyled  = styled(Link)`
@@ -44,6 +46,8 @@ const Navbar = () => {
     return (
         <>
             <NavbarWrapper SomeHeight="90px">
+                <LinkStyled to={HOME_ROUTE}>home</LinkStyled>
+                <LinkStyled to={DOWNLOAD_ROUTE}>pdf</LinkStyled>
                 <LinkStyled to={GITHUB_ROUTE}>github</LinkStyled>
                 <br/>
                 <LinkStyled to={GITLAB_ROUTE}>gitlab</LinkStyled>
@@ -52,6 +56,7 @@ const Navbar = () => {
                 <br/>
                 <LinkStyled to={LEETCODE_ROUTE}>leetcode</LinkStyled>
                 <br/>
+                <LinkStyled to={DYNAMIC_PAGINATION_ROUTE}>Dynamic Pagination</LinkStyled>
                 <button onClick={
                     () => changeTheme()
                 }>Theme</button>

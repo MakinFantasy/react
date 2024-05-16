@@ -12,13 +12,17 @@ import {
     GITLAB_ROUTE,
     YOUTUBE_ROUTE,
     LEETCODE_ROUTE,
-    DOWNLOAD_ROUTE
+    DOWNLOAD_ROUTE,
+    DYNAMIC_PAGINATION_ROUTE,
+    HOME_ROUTE
 } from './configs';
 import Github from "./pages/Github.tsx";
 import Gitlab from "./pages/Gitlab.tsx";
 import Youtube from "./pages/Youtube.tsx";
 import Leetcode from "./pages/Leetcode.tsx";
 import Pdf from "../Pdf";
+import DynamicPagination from "../DynamicPagination";
+import Data from "../Data";
 
 
 const MainRouter = ({isAuth = false}) => {
@@ -32,6 +36,9 @@ const MainRouter = ({isAuth = false}) => {
         { path: LEETCODE_ROUTE, element: <Leetcode/>},
         { path: "*", element: <Navigate to={'/'} replace />},
         {path: DOWNLOAD_ROUTE, element: <Pdf/>, },
+        {path: DYNAMIC_PAGINATION_ROUTE, element: <DynamicPagination/>},
+        {path: HOME_ROUTE, element: <Data/>},
+        {path: DOWNLOAD_ROUTE, element: <Pdf/>}
     ]
 
     const authPath: RouteObject[] = [

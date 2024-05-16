@@ -12,6 +12,7 @@ export const DataWrapper = styled.div`
     background-color: white;
     color: var(--headingColor);
     font-size: var(--headingSize);
+    margin: 0 auto;
 `
 
 const Data = () => {
