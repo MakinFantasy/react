@@ -1,8 +1,5 @@
 export const Gena = () => {
-
-    return (
-        <>Я Гена</>
-    )
-}
+  return <>Я Гена</>;
+};
 
 export default Gena;

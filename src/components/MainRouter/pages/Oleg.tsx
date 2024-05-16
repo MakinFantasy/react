@@ -1,8 +1,5 @@
 export const Oleg = () => {
-
-    return (
-        <>Я Олег</>
-    )
-}
+  return <>Я Олег</>;
+};
 
 export default Oleg;

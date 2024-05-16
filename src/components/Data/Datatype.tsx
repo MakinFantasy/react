@@ -1,7 +1,5 @@
-
-
 export interface DataType {
-    key: number,
-    country: string,
-    name: string,
+  key: number;
+  country: string;
+  name: string;
 }

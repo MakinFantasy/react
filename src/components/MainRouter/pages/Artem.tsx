@@ -1,12 +1,5 @@
 export const Artem = () => {
-
-    return (
-
-        <>
-            Я Артем
-
-        </>
-    )
-}
+  return <>Я Артем</>;
+};
 
 export default Artem;

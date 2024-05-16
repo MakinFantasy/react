@@ -1,8 +1,5 @@
 export const Vlad = () => {
-
-    return (
-        <>Я Влад</>
-    )
-}
+  return <>Я Влад</>;
+};
 
 export default Vlad;

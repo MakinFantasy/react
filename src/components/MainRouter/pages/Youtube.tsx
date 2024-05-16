@@ -1,15 +1,11 @@
-import {PageWrapper} from "./PageWrapper.tsx";
+import { PageWrapper } from "./PageWrapper.tsx";
 
 export const Youtube = () => {
-
-    return (
-
-        <>
-            <PageWrapper>
-                Youtube
-            </PageWrapper>
-        </>
-    )
-}
+  return (
+    <>
+      <PageWrapper>Youtube</PageWrapper>
+    </>
+  );
+};
 
 export default Youtube;

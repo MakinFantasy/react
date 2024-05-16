@@ -1,15 +1,11 @@
-import {PageWrapper} from "./PageWrapper.tsx";
+import { PageWrapper } from "./PageWrapper.tsx";
 
 export const Leetcode = () => {
-
-    return (
-
-        <>
-            <PageWrapper>
-                Leetcode
-            </PageWrapper>
-        </>
-    )
-}
+  return (
+    <>
+      <PageWrapper>Leetcode</PageWrapper>
+    </>
+  );
+};
 
 export default Leetcode;
