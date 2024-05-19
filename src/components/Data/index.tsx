@@ -24,9 +24,8 @@ const Data = () => {
     getUniversity(page, LIMIT_LIST_SCHOOL);
   }, [page, LIMIT_LIST_SCHOOL]);
 
-  const offset = LIMIT_LIST_SCHOOL * page - LIMIT_LIST_SCHOOL;
-
   const getUniversity = async (page: number, limit: number) => {
+    const offset = LIMIT_LIST_SCHOOL * page - LIMIT_LIST_SCHOOL;
     const response = await axios.get(`http://universities.hipolabs.com/search?offset=${offset}&limit=${limit}`);
     console.log(response);
     setDataSource(response.data);

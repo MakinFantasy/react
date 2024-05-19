@@ -3,7 +3,7 @@ import { FC } from "react";
 import { styles } from "./styles.ts";
 import { IPdfData } from "../types.ts";
 
-const MyDocument: FC<IPdfData> = ({ name, picture }) => {
+const MyDocument: FC<IPdfData> = ({ name, picture, email, age }) => {
   return (
     <>
       <Document>
@@ -14,7 +14,12 @@ const MyDocument: FC<IPdfData> = ({ name, picture }) => {
           <View style={styles.section}>
             <Text>{name}</Text>
           </View>
-
+          <View style={styles.section}>
+            <Text>{email}</Text>
+          </View>
+          <View style={styles.section}>
+            <Text>{age}</Text>
+          </View>
           <View style={styles.section}>{picture && <Image src={picture[0]} style={styles.picture} />}</View>
         </Page>
       </Document>
